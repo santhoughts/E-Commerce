@@ -48,4 +48,13 @@ public class LoginTest extends BaseTest {
 
 
     }
+
+    @DataProvider
+    public Object[][] getLoginData12() throws IOException {
+        List<HashMap<String, String>> loginData1 = getJsonDataToMap(System.getProperty
+                ("user.dir") + "\\src\\test\\java\\Data\\LoginData.json");
+        return new Object[][]{{loginData1.get(1)}, {loginData1.get(2)}, {loginData1.get(3)}};
+
+
+    }
 }
