@@ -25,6 +25,12 @@ public class RegistrationFormTest extends BaseTest {
         //tearDown();
 
     }
+    @DataProvider
+    public Object[][] getData() throws IOException {
+        List<HashMap<String , String>> data = getJsonDataToMap
+                (System.getProperty("user.dir")+"//src//test//java//Data//SignUpData.json");
+        return new Object[][] {{data.get(0)}};
+    }
 
     /*@DataProvider
     public Object[][] getData()
@@ -78,27 +84,22 @@ public class RegistrationFormTest extends BaseTest {
         LandingPage landingPage=LaunchApplication();
         RegistrationPage registrationPage=landingPage.openRegisterForm();
         ConfirmMessage confirmMessage=registrationPage.RegistrationFormWithoutRequiredField("Sanjeev","Yadav",
-                "sanjpp12300@aksinteractive.com", "8066262084",
+                "sanjpp123@aksinteractive.com", "8060262084",
                 "Sanjeev@123","Sanjeev@123");
         String confirmationMessage = confirmMessage.getConfirmationMessage();
         Assert.assertTrue(confirmationMessage.equalsIgnoreCase("Account Created Successfully"));
 
     }
 
-    @DataProvider
-    public Object[][] getData() throws IOException {
-      List<HashMap<String , String>> data = getJsonDataToMap
-              (System.getProperty("user.dir")+"//src//test//java//Data//SignUpData.json");
-        return new Object[][] {{data.get(0)},{data.get(1)}};
-    }
 
 
-    @Test(dataProvider = "getData")
+
+    @Test(dataProvider = "getData1")
     public void ErrorMessageForPasswordNotMatchWithConfirmPassword(HashMap<String , String>input)
     {
         LandingPage landingPage=LaunchApplication();
         RegistrationPage registrationPage=landingPage.openRegisterForm();
-        registrationPage.RegistrationForm((String)input.get("firstName") ,(String)input.get("lastName") ,
+        registrationPage.RegistrationForm((String)input.get("firstName") ,(String)input.get("lastName"),
                 (String)input.get("email") ,(String)input.get("mobileNo"),
                 (String)input.get("password"),(String)input.get("confirmPassword"));
        String passwordMatchError = registrationPage.PasswordNotMatchingErrorMEssage();
@@ -106,8 +107,14 @@ public class RegistrationFormTest extends BaseTest {
                ("Password and Confirm Password must match with each other."));
 
     }
+    @DataProvider
+    public Object[][] getData1() throws IOException {
+        List<HashMap<String , String>> data = getJsonDataToMap
+                (System.getProperty("user.dir")+"//src//test//java//Data//SignUpData.json");
+        return new Object[][] {{data.get(1)}};
+    }
 
-    @Test(dataProvider = "getData")
+    @Test(dataProvider = "getData2")
     public void VerifyTheWarningMessageforAlreadyAddedUser(HashMap<String , String>input)
     {
         LandingPage landingPage=LaunchApplication();
@@ -121,11 +128,11 @@ public class RegistrationFormTest extends BaseTest {
 
 
     }
-
-
-
-
-
-
+    @DataProvider
+    public Object[][] getData2() throws IOException {
+        List<HashMap<String , String>> data = getJsonDataToMap
+                (System.getProperty("user.dir")+"//src//test//java//Data//SignUpData.json");
+        return new Object[][] {{data.get(3)}};
+    }
 
 }

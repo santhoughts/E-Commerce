@@ -3,17 +3,15 @@
 
 <suite name="Registration Test">
 
-    <test name="SmokeTesting">
+    <test name="AddtoCart Test">
         <groups>
             <run>
                 <include name="Smoke"/>
             </run>
         </groups>
         <classes>
-            <class name="PageObjects.RegistrationFormTest"/>
             <class name="PageObjects.LoginTest"/>
-
-
+            <class name="PageObjects.LoginAddToCartTest"/>
         </classes>
     </test>
 </suite>

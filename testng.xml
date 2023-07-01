@@ -2,14 +2,19 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
 <suite name="All Test Suite">
-    <test verbose="2" preserve-order="true" name="C:/Users/hp/E-Commerce"><classes>
-        <class name="PageObjects.RegistrationFormTest">
-            <methods>
-            <include name="InputErrorMessageForEachField"/>
-                <include name="CompleteRegistration"/>
-                <include name="RegisterationWithoutEnterTheRequiredField"/>
-        </methods>
-        </class>
-    </classes>
+
+    <listeners>
+        <listener class-name="TestComponents.Listeners"></listener>
+    </listeners>
+    <!--    <test thread-count="5" name="Submit Order Test">-->
+    <!--        <classes>-->
+    <!--            <class name="sanjeevAcademy.tests.SubmitOrderTest"/>-->
+    <!--        </classes>-->
+    <!--    </test> &lt;!&ndash; Test &ndash;&gt;-->
+
+    <test thread-count="1" name="Registration form test">
+        <classes>
+            <class name="PageObjects.RegistrationFormTest"/>
+        </classes>
     </test>
 </suite>

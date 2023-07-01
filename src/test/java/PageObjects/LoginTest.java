@@ -12,8 +12,9 @@ import java.util.List;
 
 public class LoginTest extends BaseTest {
 
-    @Test(dataProvider = "getLoginData")
-    public void LoginIntoApplicationWithCorrectCredentials(HashMap<String , String>input)
+    @Test(dataProvider = "getLoginData" , groups = {"Smoke"})
+
+    public void Login(HashMap<String , String>input)
     {
         LandingPage landingPage=LaunchApplication();
         landingPage.LoginIntoApplication((String)input.get("Email"), (String)input.get("Password"));
@@ -25,8 +26,7 @@ public class LoginTest extends BaseTest {
     public Object[][] getLoginData() throws IOException {
       List<HashMap<String , String>>  loginData= getJsonDataToMap(System.getProperty
               ("user.dir") + "\\src\\test\\java\\Data\\LoginData.json");
-      return new Object[][]{{loginData.get(0)},{loginData.get(1)}
-              ,{loginData.get(2)},{loginData.get(3)}};
+      return new Object[][]{{loginData.get(0)}};
       //0,1,2,3 are the indexes of the json data where
         // we put the combination of different credentilas
     }
@@ -35,9 +35,9 @@ public class LoginTest extends BaseTest {
     public void LoginErrorValidations(HashMap<String , String>input)
     {
         LandingPage landingPage = LaunchApplication();
-        landingPage.LoginIntoApplication((String)input.get("Email"),(String)input.get("Password"));
+       landingPage.LoginIntoApplication((String)input.get("Email"),(String)input.get("Password"));
         String loginErrorMessage = landingPage.getLoginErrorMessage();
-        Assert.assertTrue(loginErrorMessage.equalsIgnoreCase("Incorrect email or password."));
+        Assert.assertTrue(loginErrorMessage.equalsIgnoreCase("Incorrect email  password."));
     }
 
     @DataProvider

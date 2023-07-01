@@ -45,11 +45,13 @@ public class LandingPage extends AbstractComponents {
         return registrationPage;
     }
 
-    public void LoginIntoApplication( String userEmail , String password)
+    public ProductCataloguePage LoginIntoApplication(String userEmail , String password)
     {
         Email.sendKeys(userEmail);
         Password.sendKeys(password);
         submit.click();
+        ProductCataloguePage productCataloguePage = new ProductCataloguePage(driver);
+        return productCataloguePage;
     }
 
     public String getLoginErrorMessage()

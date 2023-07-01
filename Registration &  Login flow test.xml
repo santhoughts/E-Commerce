@@ -3,13 +3,19 @@
 
 <suite name="Registration Test">
 
-    <test name="Registration form test">
+    <test name="Registration and Login flow test">
         <classes>
             <class name="PageObjects.RegistrationFormTest">
                 <methods>
-                    <exclude name="RegisterationWithoutEnterValueInTheRequiredField"/>
-                    <exclude name="ErrorMessageForPasswordNotMatchWithConfirmPassword"/>
+                    <include name="CompleteRegistration"/>
                 </methods>
+            </class>
+
+            <class name="PageObjects.LoginTest">
+                <methods>
+                    <include name="LoginIntoApplicationWithCorrectCredentials"/>
+                </methods>
+
             </class>
 
 

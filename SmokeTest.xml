@@ -3,14 +3,15 @@
 
 <suite name="Registration Test">
 
-    <test name="Registration form test">
+    <test name="SmokeTesting">
+        <groups>
+            <run>
+                <include name="Smoke"/>
+            </run>
+        </groups>
         <classes>
-            <class name="PageObjects.RegistrationFormTest">
-                <methods>
-                    <exclude name="RegisterationWithoutEnterValueInTheRequiredField"/>
-                    <exclude name="ErrorMessageForPasswordNotMatchWithConfirmPassword"/>
-                </methods>
-            </class>
+            <class name="PageObjects.RegistrationFormTest"/>
+            <class name="PageObjects.LoginTest"/>
 
 
         </classes>

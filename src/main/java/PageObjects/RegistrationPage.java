@@ -88,10 +88,6 @@ public class RegistrationPage extends AbstractComponents {
         ConfirmPassword.sendKeys(confirmPassword);
         CheckBox.click();
         RegisterSubmit.click();
-
-
-
-
         ConfirmMessage confirmMessage = new ConfirmMessage(driver);
         return confirmMessage;
     }

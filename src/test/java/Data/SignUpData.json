@@ -1,0 +1,30 @@
+[
+  {
+    "firstName" : "MD Babu" ,
+    "lastName" : "Kausar",
+    "email" : "shh0066633@gmail.com",
+    "mobileNo" : "9033989800",
+    "password" : "Amit@123",
+    "confirmPassword" : "Amit@123"
+  } ,
+
+
+  {
+    "firstName" : "Abhishek" ,
+    "lastName" : "Kumar",
+    "email" : "ab002@gmail.com",
+    "mobileNo" : "9802089891",
+    "password" : "mit@123",
+    "confirmPassword" : "Amit@123"
+
+  },
+
+  {
+    "firstName" : "MD Babu" ,
+    "lastName" : "Kausar",
+    "email" : "sjhhh000@gmail.com",
+    "mobileNo" : "9098989891",
+    "password" : "Amit@123",
+    "confirmPassword" : "Amit@123"
+  }
+]
