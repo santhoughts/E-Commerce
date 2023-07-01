@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Registration Test">
+
+    <test name="Registration form test">
+        <classes>
+            <class name="PageObjects.RegistrationFormTest">
+                <methods>
+                    <exclude name="RegisterationWithoutEnterValueInTheRequiredField"/>
+                    <exclude name="ErrorMessageForPasswordNotMatchWithConfirmPassword"/>
+                </methods>
+            </class>
+
+
+        </classes>
+    </test>
+</suite>
